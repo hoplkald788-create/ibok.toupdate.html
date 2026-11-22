@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الخدمات المصرفية عبر الإنترنت من iBOK - تسجيل الدخول</title>
+
+  <!-- خط عربي واضح -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- مكتبة أيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --red-header: #c8232c;
+      --red-dark: #a61920;
+      --gold-banner: #c59b27;
+      --pink-btn: #e59398;
+      --pink-btn-hover: #da7d83;
+      --bg-page: #f4f3f1;
+      --card-bg: #ffffff;
+      --text-main: #222222;
+      --text-muted: #555555;
+      --border-input: #777777;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--bg-page);
+      background-image:
+        radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        radial-gradient(rgba(0, 0, 0, 0.03) 1px, var(--bg-page) 1px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      color: var(--text-main);
+    }
+
+    .app-container {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: transparent;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
+    }
+
+    /* الشريط العلوي الأحمر */
+    .top-bar {
+      background-color: var(--red-header);
+      color: #ffffff;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    .ibok-logo {
+      font-family: Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      padding-left: 12px;
+      border-left: 1.5px solid rgba(255, 255, 255, 0.55);
+      user-select: none;
+    }
+
+    .top-bar-sub {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .top-bar-sub .ar {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .top-bar-sub .en {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      opacity: 0.92;
+      direction: ltr;
+      text-align: left;
+    }
+
+    /* شريط العنوان باللون الذهبي المائل للأصفر */
+    .page-title-banner {
+      background-color: var(--gold-banner);
+      color: #ffffff;
+      padding: 16px 18px;
+      text-align: right;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .page-title-banner h1 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    /* منطقة النموذج الرئيسية */
+    .main-content {
+      padding: 20px 16px 24px;
+      flex: 1;
+    }
+
+    .form-card {
+      background-color: var(--card-bg);
+      border-radius: 14px;
+      padding: 24px 20px 28px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-heading-wrap {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .card-heading {
+      display: inline-block;
+      font-size: 21px;
+      font-weight: 700;
+      color: #2b2b2b;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--red-header);
+    }
+
+    .field-group {
+      margin-bottom: 18px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 8px;
+    }
+
+    .input-control {
+      width: 100%;
+      height: 48px;
+      border: 1.2px solid var(--border-input);
+      border-radius: 6px;
+      background-color: #ffffff;
+      padding: 0 14px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 15px;
+      color: #222222;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .input-control::placeholder {
+      color: #888888;
+      font-size: 14px;
+    }
+
+    .input-control:focus {
+      border-color: var(--red-header);
+      box-shadow: 0 0 0 3px rgba(200, 35, 44, 0.1);
+    }
+
+    .password-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-wrapper .input-control {
+      padding-left: 44px;
+    }
+
+    .toggle-password-btn {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: #555555;
+      font-size: 17px;
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle-password-btn:hover {
+      color: var(--red-header);
+    }
+
+    .forgot-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    .forgot-link {
+      color: #444444;
+      font-size: 13.5px;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .forgot-link:hover {
+      color: var(--red-header);
+      text-decoration: underline;
+    }
+
+    /* الشروط والأحكام */
+    .terms-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .terms-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid var(--red-header);
+      border-radius: 3px;
+      background-color: #ffffff;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .terms-checkbox:checked {
+      background-color: var(--red-header);
+      border-color: var(--red-header);
+    }
+
+    .terms-checkbox:checked::after {
+      content: "✓";
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -52%);
+    }
+
+    .terms-label {
+      font-size: 14.5px;
+      color: #444444;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* زر تسجيل الدخول */
+    .submit-btn {
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--pink-btn);
+      color: #ffffff;
+      font-family: 'Cairo', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--pink-btn-hover);
+    }
+
+    .submit-btn:active {
+      transform: scale(0.99);
+    }
+
+    /* التذييل السفلي */
+    .page-footer {
+      border-top: 2.5px solid var(--red-header);
+      background-color: #f7f6f4;
+      padding: 16px 14px 20px;
+      text-align: center;
+    }
+
+    .copyright-text {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2b2b2b;
+      margin-bottom: 14px;
+    }
+
+    .social-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .social-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: bold;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .icon-bank {
+      background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 60%, #fbc02d 100%);
+    }
+
+    .icon-in {
+      background-color: #0077b5;
+      font-family: Arial, sans-serif;
+    }
+
+    .icon-x {
+      background-color: #111111;
+    }
+
+    .icon-fb {
+      background-color: #3b5998;
+    }
+
+    /* رسالة تنبيه */
+    .message-box {
+      margin-top: 14px;
+      font-size: 13.5px;
+      text-align: center;
+      min-height: 20px;
+      color: var(--red-dark);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+    <div>
+      <!-- الشريط العلوي الأحمر -->
+      <header class="top-bar">
+        <div class="ibok-logo" dir="ltr">iBOK</div>
+        <div class="top-bar-sub">
+          <span class="ar">الخدمات المصرفية عبر الإنترنت</span>
+          <span class="en">Internet Banking Services</span>
+        </div>
+      </header>
+
+      <!-- شريط العنوان الذهبي -->
+      <section class="page-title-banner">
+        <h1>الخدمات المصرفية عبر الإنترنت من <span dir="ltr">iBOK</span> - تسجيل الدخول</h1>
+      </section>
+
+      <!-- بطاقة النموذج -->
+      <main class="main-content">
+        <form id="loginForm" class="form-card" onsubmit="handleLogin(event)" novalidate>
+          <div class="card-heading-wrap">
+            <h2 class="card-heading">يرجى إدخال التفاصيل</h2>
+          </div>
+
+          <div class="field-group">
+            <label for="username" class="field-label">معرف المستخدم:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="input-control"
+              placeholder="أدخل معرّف المستخدم"
+              autocomplete="username"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="password" class="field-label">كلمة المرور:</label>
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input-control"
+                placeholder="أدخل كلمة المرور"
+                autocomplete="current-password"
+              />
+              <button
+                type="button"
+                class="toggle-password-btn"
+                id="togglePasswordBtn"
+                aria-label="إظهار أو إخفاء كلمة المرور"
+                onclick="togglePassword()"
+              >
+                <i id="eyeIcon" class="fa-regular fa-eye-slash"></i>
+              </button>
+            </div>
+            <div class="forgot-row">
+              <a href="#forgot-password" class="forgot-link" onclick="showMessage('تم اختيار: هل نسيت كلمة المرور؟')">
+                هل نسيت كلمة المرور؟
+              </a>
+            </div>
+          </div>
+
+          <div class="terms-row">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              class="terms-checkbox"
+              checked
+            />
+            <label for="terms" class="terms-label">الشروط والأحكام</label>
+          </div>
+
+          <button type="submit" class="submit-btn">تسجيل الدخول</button>
+
+          <div id="formMessage" class="message-box" role="status" aria-live="polite"></div>
+        </form>
+      </main>
+    </div>
+
+    <!-- التذييل السفلي -->
+    <footer class="page-footer">
+      <p class="copyright-text">بنك الخرطوم 2024 | <span dir="ltr">iBOK</span></p>
+      <div class="social-row">
+        <a href="#bank" class="social-icon icon-bank" aria-label="بنك الخرطوم">
+          <i class="fa-solid fa-shield-halved"></i>
+        </a>
+        <a href="#linkedin" class="social-icon icon-in" aria-label="LinkedIn">in</a>
+        <a href="#x" class="social-icon icon-x" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="#facebook" class="social-icon icon-fb" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eyeIcon');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+      }
+    }
+
+    function showMessage(text) {
+      const box = document.getElementById('formMessage');
+      box.textContent = text;
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const termsChecked = document.getElementById('terms').checked;
+
+      if (!username) {
+        showMessage('يرجى إدخال معرّف المستخدم.');
+        return;
+      }
+      if (!password) {
+        showMessage('يرجى إدخال كلمة المرور.');
+        return;
+      }
+      if (!termsChecked) {
+        showMessage('يرجى الموافقة على الشروط والأحكام.');
+        return;
+      }
+
+      showMessage('تم التحقق من البيانات وجاري تسجيل الدخول...');
+    }
+  </script>
+</body>
+</html>
